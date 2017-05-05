@@ -44,14 +44,14 @@ def spiral_coverage() :
 			goal.target_pose.pose.position.y = 0
 			first = 1
 		else :
-			goal.target_pose.pose.position.y = m - 1.5 * sweep_width
+			goal.target_pose.pose.position.y = m - (1.5 * sweep_width)
 		goal.target_pose.pose.orientation.w = 1.57
 		client.send_goal(goal)
 		rospy.loginfo('sent goal')
 		rospy.loginfo(goal)
 		client.wait_for_result()
 	
-		goal.target_pose.pose.orientation.w = 0
+		
 		goal.target_pose.pose.position.x = m
 		goal.target_pose.pose.position.y = l
 		client.send_goal(goal)
